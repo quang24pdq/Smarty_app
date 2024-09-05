@@ -10,6 +10,7 @@ const String routineRoute = '/routine';
 const String statsRoute = '/stats';
 const String devicesRoute = '/devices';
 const String lightRoute = '/light';
+const String rolling = '/rollingdoor';
 const String acRoute = '/ac';
 const String smartTvRoute = '/smartTv';
 const String cctvRoute = '/cctv';

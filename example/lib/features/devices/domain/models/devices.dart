@@ -6,11 +6,12 @@ class Device {
   bool active;
   String room;
 
-  Device(
-      {this.name,
-      required this.type,
-      required this.active,
-      required this.room});
+  Device({
+    this.name,
+    required this.type,
+    required this.active,
+    required this.room,
+  });
 }
 
 List<Device> devices = [
@@ -49,5 +50,11 @@ List<Device> devices = [
     type: DeviceType.light,
     active: true,
     room: 'Living Room',
+  ),
+  Device(
+    name: 'Rolling Door',
+    type: DeviceType.rolling, // Đảm bảo rằng loại thiết bị mới đã được định nghĩa trong enum DeviceType
+    active: true,
+    room: 'Garage', // Hoặc phòng khác tùy theo yêu cầu của bạn
   ),
 ];

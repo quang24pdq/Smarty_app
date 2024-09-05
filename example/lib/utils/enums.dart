@@ -1,6 +1,6 @@
 import '../core/navigation/navigator.dart';
 
-enum DeviceType { ac, smartTv, cctv, refridgerator, microwave, light }
+enum DeviceType { ac, smartTv, cctv, refridgerator, microwave, light, rolling }
 
 extension DeviceTypeExtension on DeviceType {
   String get name {
@@ -17,6 +17,8 @@ extension DeviceTypeExtension on DeviceType {
         return 'Microwave';
       case DeviceType.light:
         return 'Light';
+      case DeviceType.rolling:
+        return 'rollingdoor';
       default:
         return 'Unknown';
     }
@@ -36,6 +38,8 @@ extension DeviceTypeExtension on DeviceType {
         return 'assets/icons/oven.png';
       case DeviceType.light:
         return 'assets/icons/light.png';
+      case DeviceType.rolling:
+        return  'assets/icons/Rollingdoor.png';
       default:
         return null;
     }
@@ -55,6 +59,8 @@ extension DeviceTypeExtension on DeviceType {
         return microwaveRoute;
       case DeviceType.light:
         return lightRoute;
+      case DeviceType.rolling:
+        return rolling;
       default:
         return '/unknown';
     }

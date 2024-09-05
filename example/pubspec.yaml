@@ -38,6 +38,7 @@ dependencies:
   pin_code_fields: ^8.0.1
   pulse_widget: ^0.0.2
   sleek_circular_slider: ^2.0.1
+  
   bat_theme:
     path: ../
   provider: ^6.0.5

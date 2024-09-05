@@ -2,10 +2,11 @@ import 'package:bat_theme/bat_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:smarty/core/navigation/navigator.dart';
+import 'package:smarty/features/profile/presentation/views/AccountSecurityScreen.dart';
+import 'package:smarty/features/profile/presentation/views/PersonaInfoScreen.dart';
+import 'package:smarty/features/profile/presentation/widgets/settings_tile.dart';
 import 'package:smarty/main.dart';
-
-import '../../../../core/navigation/navigator.dart';
-import '../widgets/settings_tile.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -14,6 +15,7 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = BatThemeData.of(context);
     var provider = context.read<ThemeProvider>();
+
     return Scaffold(
       backgroundColor: theme.colors.background,
       body: SafeArea(
@@ -42,12 +44,42 @@ class SettingsScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 24.h),
-                const SettingsTile(title: 'Thông tin cá nhân'),
-                const SettingsTile(title: 'Tài khoản và bảo mật'),
-                const SettingsTile(title: 'Thông báo ứng dụng'),
-                const SettingsTile(title: 'Kích hoạt chế độ an toàn'),
+                // Cài đặt điều hướng cho các SettingsTile
+                SettingsTile(
+                  title: 'Thông tin cá nhân',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const PersonalInfoScreen()),
+                    );
+                  },
+                ),
+                SettingsTile(
+                  title: 'Tài khoản và bảo mật',
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const AccountSecurityScreen()),
+                    );
+                  },
+                ),
+                SettingsTile(
+                  title: 'Thông báo ứng dụng',
+                  onTap: () {
+                    // Điều hướng đến trang cài đặt thông báo
+                  },
+                ),
+                SettingsTile(
+                  title: 'Kích hoạt chế độ an toàn',
+                  onTap: () {
+                    // Điều hướng đến trang cài đặt chế độ an toàn
+                  },
+                ),
                 SettingsTile(
                   title: 'Dark Mode',
+                  onTap: () {
+                    // Điều hướng đến trang cài đặt Dark Mode
+                  },
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -65,8 +97,18 @@ class SettingsScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SettingsTile(title: 'Đơn vị nhiệt độ'),
-                const SettingsTile(title: 'Cài đặt quyền riêng tư'),
+                SettingsTile(
+                  title: 'Đơn vị nhiệt độ',
+                  onTap: () {
+                    // Điều hướng đến trang cài đặt đơn vị nhiệt độ
+                  },
+                ),
+                SettingsTile(
+                  title: 'Cài đặt quyền riêng tư',
+                  onTap: () {
+                    // Điều hướng đến trang cài đặt quyền riêng tư
+                  },
+                ),
               ],
             ),
           ),

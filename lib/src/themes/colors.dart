@@ -38,6 +38,18 @@ class BatColors extends ThemeExtension<BatColors> {
           tertiary: BatPalette.white,
         );
 
+  get icon => null;
+
+  get onAppBar => null;
+
+  get appBarBackground => null;
+
+  get onPrimary => null;
+
+  get shadow => null;
+
+  get onBackground => null;
+
   @override
   BatColors copyWith({
     Color? background,

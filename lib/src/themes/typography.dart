@@ -174,6 +174,14 @@ class BatTypography extends ThemeExtension<BatTypography> {
           ),
         );
 
+  get bodyText => null;
+
+  get bodyBold => null;
+
+  get button => null;
+
+  get body1 => null;
+
   @override
   BatTypography copyWith({
     TextStyle? headline1,
